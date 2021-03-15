@@ -105,19 +105,6 @@ class treap:
                 if q.key<r.key:r.left=q
                 else:r.right=q
 
-    def _delete(self,t,key):
-        if t.left==None and t.right is None:
-            return None
-        elif t.left is None:
-            t=self.leftRotate(t)
-        elif t.right is None:
-            t=self.rightRotate(t)
-        else:
-            if t.left.priority>t.right.priority:
-                t=self.rightRotate(t)
-            else:
-                t=self.leftRotate(t)
-        return self.delete(t,key)
     def print_pre(self,p):
         if p is None:return
         print(f' {p.key}',end='')
